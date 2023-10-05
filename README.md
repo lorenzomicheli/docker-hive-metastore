@@ -1,7 +1,7 @@
 # Hive Metastore Dockerfile
 
 This repository provides a Dockerfile for Hive Metastore.
-It includes the MySQL Java connector to support MySQL Databases. 
+It includes the MySQL Java connector to support MySQL Databases.
 
 To configure the database connection string and credentials, you need to set the following environment variables:
 

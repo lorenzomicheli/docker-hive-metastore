@@ -3,17 +3,17 @@ export JAVA_HOME=/usr/local/openjdk-8
 
 if [ x"$HIVE_DB_CONNECTION_URL" = "x" ]; then
     echo "HIVE_DB_CONNECTION_URL environment variable is not set"
-    exit 1 
+    exit 1
 fi
 
 if [ x"$HIVE_DB_USERNAME" = "x"  ]; then
     echo "HIVE_DB_USERNAME environment variable is not set"
-    exit 1 
+    exit 1
 fi
 
 if [ x"$HIVE_DB_PASSWORD" = "x" ]; then
     echo "HIVE_DB_PASSWORD environment variable is not set"
-    exit 1 
+    exit 1
 fi
 
 replace_connection_url=$(grep "javax.jdo.option.ConnectionURL" -A +3 -B 1 ${HIVE_HOME}/conf/metastore-site.xml | grep "<value>")
@@ -30,7 +30,7 @@ ${HIVE_HOME}/bin/schematool -dbType mysql -info
 
 if [ $? -eq 1 ]; then
   echo "Getting schema info failed. Probably not initialized. Initializing..."
-  ${HIVE_HOME}/bin/schematool -initSchema -dbType mysql 
+  ${HIVE_HOME}/bin/schematool -initSchema -dbType mysql
 fi
 
 ${HIVE_HOME}/bin/start-metastore

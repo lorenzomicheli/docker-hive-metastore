@@ -44,8 +44,8 @@ RUN groupadd -r hive --gid=1000 && \
     chown hive:hive /entrypoint.sh && chmod +x /entrypoint.sh
 
 RUN mkdir ${HIVE_HOME}/warehouse && \
-    chown hive:hive ${HIVE_HOME}/warehouse 
-    
+    chown hive:hive ${HIVE_HOME}/warehouse
+
 USER hive
 EXPOSE 9083
 

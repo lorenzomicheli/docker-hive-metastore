@@ -34,5 +34,5 @@
 <property>
     <name>fs.s3a.aws.credentials.provider</name>
     <value>org.apache.hadoop.fs.s3a.auth.IAMInstanceCredentialsProvider</value>
-</property> 
+</property>
 </configuration>
